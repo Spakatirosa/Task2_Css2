@@ -1,0 +1,60 @@
+Using Variables and Functions in Sass
+Sass, a CSS preprocessor, offers powerful features like variables and functions to enhance code organization, maintainability, and reusability.
+
+Variables
+Variables in Sass allow you to store values that can be reused throughout your stylesheet. They are declared using the $ symbol.
+
+Example:
+
+SCSS
+$primary-color: #007bff;
+$font-family: Arial, sans-serif;
+Use code with caution.
+
+Functions
+Functions in Sass provide a way to encapsulate complex calculations or operations, making your code more modular and readable.
+
+Example:
+
+SCSS
+@function rem($px) {
+  @return $px / 16px + rem;
+}
+
+.element {
+  font-size: rem(18);
+}
+Use code with caution.
+
+Maintaining Consistency
+By using variables and functions, you can ensure consistency throughout your stylesheet. For example, if you need to change the primary color, you only need to modify the variable, and all elements using that variable will be updated automatically.
+
+Inheritance in Sass
+Inheritance in Sass allows you to create stylesheets that extend and modify existing styles. This can help you organize your code and avoid duplication.
+
+Example:
+
+SCSS
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-button {
+  @extend .button;
+  background-color: $primary-color;
+  color: white;
+}
+
+.secondary-button {
+  @extend .button;
+  background-color: $secondary-color;
+  color: black;
+}
+Use code with caution.
+
+In this example, the .primary-button and .secondary-button classes inherit the styles from the .button class, but they also have their own specific styles.
+
+By using variables, functions, and inheritance, you can create more organized, maintainable, and efficient Sass stylesheets.
