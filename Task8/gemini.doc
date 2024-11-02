@@ -1,0 +1,72 @@
+Theming in CSS: A Guide to Dynamic Styling
+Theming in CSS refers to the process of creating multiple stylesheets or using variables to control the overall appearance of a website. This allows users to switch between different themes, such as light and dark modes, to suit their preferences or improve accessibility.
+
+Implementing Theming with Sass
+Sass is a powerful CSS preprocessor that offers several features to simplify the theming process:
+
+Variables: Define variables to store common style values like colors, fonts, and spacing. This makes it easy to change the theme by updating the variables.
+Mixins: Create reusable blocks of code that can be included in other stylesheets. This helps organize and maintain your theme styles.
+Nesting: Nest CSS rules within each other for better organization and readability.
+Creating a Simple Theme Switcher
+Here's a basic example of a theme switcher using Sass and variables:
+
+SCSS
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #fff;
+$text-color: #000;
+
+// Light theme
+.light-theme {
+  --primary-color: $primary-color;
+  --secondary-color: $secondary-color;
+  --background-color: $background-color;
+  --text-color: $text-color;
+}
+
+// Dark   
+ theme
+.dark-theme {
+  --primary-color: #6c757d;
+  --secondary-color: #007bff;
+  --background-color: #121212;
+  --text-color: #fff;
+}
+
+// Use variables in your styles
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: var(--text-color);   
+
+}
+Use code with caution.
+
+In the HTML:
+
+HTML
+<button id="theme-toggle">Toggle Theme</button>
+Use code with caution.
+
+JavaScript to toggle the theme:
+
+JavaScript
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-theme');   
+
+});
+Use code with caution.
+
+Explanation
+Sass variables are defined for common styles.
+Two themes (light-theme and dark-theme) are created using these variables.
+The CSS rules use var() to reference the variables, making it easy to change the theme by applying the appropriate class.
+The JavaScript toggles the dark-theme class on the body element to switch between themes.
+By using Sass variables and themes, you can create dynamic and customizable stylesheets that adapt to different user preferences and improve the overall user experience.
